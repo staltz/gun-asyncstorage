@@ -23,7 +23,7 @@
   "scripts": {
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lib": "tsc",
-    "prepublish": "npm run lib"
+    "prepublishOnly": "npm run lib"
   },
   "peerDependencies": {
     "react-native": "*"
