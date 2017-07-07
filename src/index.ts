@@ -2,6 +2,7 @@ import * as Gun from "gun";
 import { Adapter } from "./adapter";
 
 Gun.on("opt", (context: any) => {
+  this.to.next(context);
   const adapter = new Adapter();
 
   // Allows other plugins to respond concurrently.
@@ -12,6 +13,6 @@ Gun.on("opt", (context: any) => {
     };
 
   // Register the adapter
-  Gun.on("get", pluginInterop(adapter.read));
-  Gun.on("put", pluginInterop(adapter.write));
+  context.on("get", pluginInterop(adapter.read));
+  context.on("put", pluginInterop(adapter.write));
 });
