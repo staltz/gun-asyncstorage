@@ -29,11 +29,11 @@
     "react-native": "*"
   },
   "dependencies": {
-    "@types/react-native": "^0.44.8",
-    "gun": "0.7.x"
+    "@types/react-native": "0.51.7",
+    "gun": "0.9.4"
   },
   "devDependencies": {
-    "prettier": "^1.4.1",
-    "typescript": "^2.3.4"
+    "prettier": "1.9.2",
+    "typescript": "2.6.2"
   }
 }
