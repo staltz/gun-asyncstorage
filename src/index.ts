@@ -1,8 +1,8 @@
 import * as Gun from "gun";
 import { Adapter } from "./adapter";
 
-Gun.on("opt", (context: any) => {
-  const adapter = new Adapter();
+Gun.on("create", (db: any) => {
+  const adapter = new Adapter(db);
 
   // Allows other plugins to respond concurrently.
   const pluginInterop = (middleware: any) =>
@@ -12,6 +12,6 @@ Gun.on("opt", (context: any) => {
     };
 
   // Register the adapter
-  Gun.on("get", pluginInterop(adapter.read));
-  Gun.on("put", pluginInterop(adapter.write));
+  db.on("get", pluginInterop(adapter.read));
+  db.on("put", pluginInterop(adapter.write));
 });
