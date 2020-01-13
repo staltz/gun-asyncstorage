@@ -1,6 +1,6 @@
 {
   "name": "@gooddollar/gun-asyncstorage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Use Gun.js in React Native through AsyncStorage",
   "author": "GoodDollar",
   "license": "MIT",
