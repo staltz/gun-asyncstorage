@@ -18,6 +18,8 @@ export class Adapter {
       this.db.on("in", {
         "@": context["#"],
         put: Gun.graph.node(data),
+        //not needed. this solves an issue in gun https://github.com/amark/gun/issues/877
+        _: function() {},
         err
       });
     };
