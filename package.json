@@ -1,17 +1,17 @@
 {
-  "name": "gun-asyncstorage",
-  "version": "1.0.1",
+  "name": "@gooddollar/gun-asyncstorage",
+  "version": "1.0.3",
   "description": "Use Gun.js in React Native through AsyncStorage",
-  "author": "Andre Staltz",
+  "author": "GoodDollar",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/staltz/gun-asyncstorage.git"
+    "url": "git+https://github.com/GoodDollar/gun-asyncstorage.git"
   },
   "bugs": {
-    "url": "https://github.com/staltz/gun-asyncstorage/issues"
+    "url": "https://github.com/GoodDollar/gun-asyncstorage/issues"
   },
-  "homepage": "https://github.com/staltz/gun-asyncstorage#readme",
+  "homepage": "https://github.com/GoodDollar/gun-asyncstorage#readme",
   "keywords": [
     "react-native",
     "asyncstorage",
@@ -26,14 +26,13 @@
     "prepublishOnly": "npm run lib"
   },
   "peerDependencies": {
-    "react-native": "*"
+    "react-native": "*",
+    "gun": "*"
   },
-  "dependencies": {
-    "@types/react-native": "^0.44.8",
-    "gun": "0.7.x"
-  },
+  "dependencies": {},
   "devDependencies": {
     "prettier": "^1.4.1",
-    "typescript": "^2.3.4"
+    "typescript": "^2.3.4",
+    "@types/react-native": "*"
   }
 }

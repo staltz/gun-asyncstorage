@@ -2,7 +2,9 @@ import * as Gun from "gun";
 import { AsyncStorage } from "react-native";
 
 export class Adapter {
-  constructor() {
+  public db: any;
+  constructor(db: any) {
+    this.db = db;
     // Preserve the `this` context for read/write calls.
     this.read = this.read.bind(this);
     this.write = this.write.bind(this);
@@ -13,9 +15,11 @@ export class Adapter {
     const { "#": key } = get;
 
     const done = (err: any, data?: any) => {
-      gun._.root.on("in", {
+      this.db.on("in", {
         "@": context["#"],
         put: Gun.graph.node(data),
+        //not needed. this solves an issue in gun https://github.com/amark/gun/issues/877
+        _: function() {},
         err
       });
     };
@@ -42,7 +46,7 @@ export class Adapter {
     ]);
 
     AsyncStorage.multiMerge(instructions, (err?: Array<any>) => {
-      gun._.root.on("in", {
+      this.db.on("in", {
         "@": context["#"],
         ok: !err || err.length === 0,
         err
